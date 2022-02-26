@@ -1,1 +1,71 @@
-
+{
+  "name": "PagerDuty",
+  "version": "1.0.0",
+  "overview": "Receive flag change notifications in PagerDuty.",
+  "description": "Receive LaunchDarkly flag changes in PagerDuty to notify on-call resources.",
+  "author": "ET",
+  "categories": ["alerts"],
+  "formVariables": [
+    {
+      "key": "email",
+      "name": "Email Address",
+      "description": "Enter your PagerDuty email address here",
+      "type": "string"
+    },
+    {
+      "key": "apiToken",
+      "name": "API Key",
+      "description": "Enter your [API key](https://example.com/api) here",
+      "type": "string",
+      "isSecret": true
+    },
+    {
+      "key": "serviceID",
+      "name": "Service ID",
+      "description": "Enter your PagerDuty Service ID here",
+      "type": "string"
+    },
+    {
+      "key": "escalationID",
+      "name": "Escalation ID",
+      "description": "Enter your PagerDuty Escalation Policy ID here",
+      "type": "string"
+    }
+  ],
+  "capabilities": {
+    "auditLogEventsHook": {
+      "endpoint": {
+        "url": "https://api.pagerduty.com/incidents",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Accept",
+            "value": "application/vnd.pagerduty+json;version=2"
+          },
+          {
+            "name": "Authorization",
+            "value": "Token token={{apiToken}}"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "From",
+            "value": "{{email}}"
+          }
+        ]
+      },
+      "templates": {
+        "flag": "templates/flag.json.hbs"
+      },
+      "defaultPolicy": [
+        {
+          "effect": "allow",
+          "resources": ["proj/*:env/production:flag/*"],
+          "actions": ["*"]
+        }
+      ]
+    }
+  }
+}
