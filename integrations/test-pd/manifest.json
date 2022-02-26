@@ -72,7 +72,7 @@
         {
           "effect": "allow",
           "resources": ["proj/*:env/production:flag/*"],
-          "actions": ["*"]
+          "actions": ["updateOn"]
         }
       ]
     }
