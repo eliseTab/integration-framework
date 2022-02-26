@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "overview": "Receive flag change notifications in PagerDuty.",
   "description": "Receive LaunchDarkly flag changes in PagerDuty to notify on-call resources.",
-  "author": "Elise Tabanda",
-  "supportEmail": "elisetabanda@gmail.com",
+  "author": "LaunchDarkly",
+  "supportEmail": "support@launchdarkly.com",
   "links": {
-    "site": "https://example.com",
-    "privacyPolicy": "https://example.com/privacy"
+    "site": "https://www.pagerduty.com/",
+    "launchdarklyDocs": "https://docs.launchdarkly.com/integrations/",
+    "privacyPolicy": "https://launchdarkly.com/policies/privacy/"
   },
   "categories": ["notifications"],
   "icons": {
@@ -24,20 +25,20 @@
     {
       "key": "apiToken",
       "name": "API Key",
-      "description": "Enter your [API key](https://example.com/api) here",
+      "description": "Enter your PagerDuty API key here",
       "type": "string",
       "isSecret": true
     },
     {
       "key": "serviceID",
       "name": "Service ID",
-      "description": "Enter your PagerDuty Service ID here",
+      "description": "Enter the Service ID of your PagerDuty Service here",
       "type": "string"
     },
     {
       "key": "escalationID",
       "name": "Escalation ID",
-      "description": "Enter your PagerDuty Escalation Policy ID here",
+      "description": "Enter the Escalation ID of your PagerDuty Escalation Policy here",
       "type": "string"
     }
   ],
