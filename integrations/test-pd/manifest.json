@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "overview": "Receive flag change notifications in PagerDuty.",
   "description": "Receive LaunchDarkly flag changes in PagerDuty to notify on-call resources.",
-  "author": "ET",
-  "categories": ["alerts"],
+  "author": "Elise Tabanda",
+  "supportEmail": "elisetabanda@gmail.com",
+  "links": {
+    "site": "https://example.com",
+    "privacyPolicy": "https://example.com/privacy"
+  },
+  "categories": ["notifications"],
+  "icons": {
+    "square": "assets/images/square.svg",
+    "horizontal": "assets/images/horizontal.svg"
+  },
   "formVariables": [
     {
       "key": "email",
